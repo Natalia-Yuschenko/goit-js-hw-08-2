@@ -1,28 +1,29 @@
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-console.log(galleryItems);
-let marckupPage = '';
+import SimpleLightbox from "simplelightbox";
+// Дополнительный импорт стилей
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+// console.log(galleryItems);
+let markupPage = '';
 
 const refs = {
-  galleryElement: document.querySelector('.gallery'),
+  galleryEl: document.querySelector('.gallery'),
 };
 
 galleryItems.forEach(({ preview, original, description }) => {
-  marckupPage += `<a class="gallery__item" href="${original}">
+  markupPage += `<a class="gallery__item" href="${original}">
   <img class="gallery__image" src="${preview}" alt="${description}" />
 </a>`;
 });
 
-addMarckupPage(marckupPage);
+addMarkupPage(markupPage);
 
-function addMarckupPage(markup) {
-  refs.galleryElement.insertAdjacentHTML('beforeend', markup);
+function addMarkupPage(markup) {
+  refs.galleryEl.insertAdjacentHTML('beforeend', markup);
 }
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-

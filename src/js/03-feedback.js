@@ -28,3 +28,22 @@ function onInputChange() {
   };
   storage.addItem('feedback-form-state', formData);
 }
+
+function onSubmitForm(e) {
+  e.preventDefault();
+  const formData = {
+    email: formEl.elements.email.value,
+    message: formEl.elements.message.value,
+  };
+  console.log(formData);
+  localStorage.clear();
+  formEl.reset();
+}
+
+function onPageInit() {
+  if (localStorage.getItem('feedback-form-state')) {
+    const formData = storage.getItem('feedback-form-state');
+    formEl.elements.email.value = formData.email;
+    formEl.elements.message.value = formData.message;
+  }
+}
