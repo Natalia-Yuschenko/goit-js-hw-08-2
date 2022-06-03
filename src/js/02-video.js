@@ -12,8 +12,8 @@ const storage = {
 
   getItem(key) {
     try {
-      const payload = localStorage.getItem(key);
-      return JSON.parse(payload);
+      const payloadOn = localStorage.getItem(key);
+      return JSON.parse(payloadOn);
     } catch (error) {
       console.error('Error parse');
     }
