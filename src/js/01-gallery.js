@@ -9,7 +9,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 let markupPage = '';
 
 const refs = {
-  galleryEl: document.querySelector('.gallery'),
+  galleryElement: document.querySelector('.gallery'),
 };
 
 galleryItems.forEach(({ preview, original, description }) => {
@@ -21,7 +21,7 @@ galleryItems.forEach(({ preview, original, description }) => {
 addMarkupPage(markupPage);
 
 function addMarkupPage(markup) {
-  refs.galleryEl.insertAdjacentHTML('beforeend', markup);
+  refs.galleryElement.insertAdjacentHTML('beforeend', markup);
 }
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
